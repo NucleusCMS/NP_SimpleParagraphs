@@ -90,7 +90,6 @@ class NP_SimpleParagraphs extends NucleusPlugin {
             if (preg_match($blockOpenTagPattern, $text, $matches)) {
                 if (strpos($text, $matches[0])
                     && strlen(trim(substr($text, 0, strpos($text, $matches[0]))))) {
-//                    $tmptext = ltrim(substr($text, 0, strpos($text, $matches[0])));
                     $proc_text .= $this->markup_plaintext(ltrim(substr($text, 0, strpos($text, $matches[0]))));
                 }
                 $text = strstr($text, $matches[0]);
@@ -120,8 +119,6 @@ class NP_SimpleParagraphs extends NucleusPlugin {
         $return_text = "";
 
         while ($pos = strpos($tmpText, $doubleLineFeeds)) {
-//            $return_text .= "<p>".trim(substr($tmpText, 0, $pos))."</p>\n";
-//            $return_text .= "<p>".preg_replace("/\n/", "<br />\n", trim(substr($tmpText, 0, $pos)))."</p>\n";
             $tmpLines = explode("\n", trim(substr($tmpText, 0, $pos)));
             $return_text .= "<p>";
             for ($i=0;$i<count($tmpLines)-1;$i++) {
@@ -134,8 +131,6 @@ class NP_SimpleParagraphs extends NucleusPlugin {
             $tmpText = substr(strstr($tmpText, $doubleLineFeeds), strlen($doubleLineFeeds));
         }
         if (strlen(trim($tmpText))) {
-//            $return_text .= "<p>".trim($tmpText)."</p>\n";
-//            $return_text .= "<p>".preg_replace("/\n/", "<br />\n", trim($tmpText))."</p>\n";
             $tmpLines = explode("\n", trim($tmpText));
             $return_text .= "<p>";
             for ($i=0;$i<count($tmpLines)-1;$i++) {
