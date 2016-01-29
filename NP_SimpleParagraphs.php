@@ -93,7 +93,8 @@ class NP_SimpleParagraphs extends NucleusPlugin {
                     $proc_text .= $this->markup_plaintext(ltrim(substr($text, 0, strpos($text, $matches[0]))));
                 }
                 $text = strstr($text, $matches[0]);
-                for ($i=0;$i<=count($blockOpenTagPatterns);$i++) {
+                $total = count($blockOpenTagPatterns);
+                for ($i=0;$i<=$total;$i++) {
                     if (preg_match($blockOpenTagPatterns[$i], $matches[0])) {
                         if (preg_match($blockCloseTagPatterns[$i], $text, $matches)) {
                             $proc_text .= substr($text, 0, strpos($text, $matches[0])).$matches[0]."\n";
