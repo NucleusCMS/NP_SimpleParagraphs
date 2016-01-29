@@ -24,14 +24,7 @@ class NP_SimpleParagraphs extends NucleusPlugin {
 		return 'This plug-in marks plain text up as paragraphs. Text lines, except marked up as block elements with (X)HTML in prior, are simply enclosed in <p> and </p> from their first letters to the next duplicated line feed or the end of the text.';
 	}
 
-	function supportsFeature($what) {
-		switch($what){
-			case 'SqlTablePrefix':
-				return 1;
-			default:
-				return 0;
-		}
-	}
+	function supportsFeature($what) { return ($what==='SqlTablePrefix');}
 
 	function getEventList() { return array('PreItem'); }
 
