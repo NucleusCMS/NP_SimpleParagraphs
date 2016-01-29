@@ -3,30 +3,17 @@
 
 class NP_SimpleParagraphs extends NucleusPlugin {
 
-	function getName() {	// name of plugin
-		return 'SimpleParagraphs';
-	}
-
-	function getAuthor()  {	// author of plugin
-		return 'tyada';
-	}
-
-	function getURL() 	{	// an URL to the plugin website
-		return 'http://www.tyada.com/';
-	}
-
-	function getVersion() {	// version of the plugin
-		return '0.2';
-	}
+	function getName()      { return 'SimpleParagraphs';}
+	function getAuthor()    { return 'tyada';}
+	function getURL()       { return 'http://www.tyada.com/';}
+	function getVersion()   { return '0.2'; }
+	function getEventList() { return array('PreItem'); }
+	function supportsFeature($what) { return ($what==='SqlTablePrefix');}
 
 	// a description to be shown on the installed plugins listing
 	function getDescription() {
 		return 'This plug-in marks plain text up as paragraphs. Text lines, except marked up as block elements with (X)HTML in prior, are simply enclosed in <p> and </p> from their first letters to the next duplicated line feed or the end of the text.';
 	}
-
-	function supportsFeature($what) { return ($what==='SqlTablePrefix');}
-
-	function getEventList() { return array('PreItem'); }
 
 	function event_PreItem(&$data) {
 		$this->currentItem = &$data["item"];
