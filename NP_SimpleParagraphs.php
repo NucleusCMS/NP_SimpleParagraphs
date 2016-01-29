@@ -67,22 +67,22 @@ class NP_SimpleParagraphs extends NucleusPlugin {
 			'/<hr\b[^>]*>/i'
 		);
 		$blockCloseTagPatterns = array(
-			'/<\/p>/i',
-			'/<\/pre>/i',
-			'/<\/h1>/i',
-			'/<\/h2>/i',
-			'/<\/h3>/i',
-			'/<\/h4>/i',
-			'/<\/h5>/i',
-			'/<\/h6>/i',
-			'/<\/address>/i',
-			'/<\/blockquote>/i',
-			'/<\/ol>/i',
-			'/<\/ul>/i',
-			'/<\/dl>/i',
-			'/<\/form>/i',
-			'/<\/table>/i',
-			'/<hr\b[^>]*>/i'
+			'@</p>@i',
+			'@</pre>@i',
+			'@</h1>@i',
+			'@</h2>@i',
+			'@</h3>@i',
+			'@</h4>@i',
+			'@</h5>@i',
+			'@</h6>@i',
+			'@</address>@i',
+			'@</blockquote>@i',
+			'@</ol>@i',
+			'@</ul>@i',
+			'@</dl>@i',
+			'@</form>@i',
+			'@</table>@i',
+			'/<hr\b[^>]*>@i'
 		);
 		$blockCloseTags = array(
 			'</p>',
